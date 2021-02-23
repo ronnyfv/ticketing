@@ -16,3 +16,17 @@ build:
         manual:
           - src: "src/**/*.ts"
             dest: .
+    - image: ronnyfvcruz/ticketing-client
+      context: client
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        infer:
+          - "**/*.ts"
+          - "**/*.tsx"
+          - "**/*.css"
+          - "**/*.js"
+          - "**/*.svg"
+        # manual:
+        #   - src: "src/**/*+(.ts|.tsx|.css|.svg|.js)"
+        #     dest: .
